@@ -1,0 +1,78 @@
+{
+  "products": [
+    {
+      "id": "5e19",
+      "title": "product",
+      "price": 200,
+      "category": "Electronics",
+      "inStock": true
+    },
+    {
+      "id": "47e0",
+      "title": "product",
+      "price": 10,
+      "category": "Fashion",
+      "inStock": true
+    },
+    {
+      "id": "6e26",
+      "title": "product",
+      "price": 20,
+      "category": "Fashion",
+      "inStock": false
+    },
+    {
+      "id": "303a",
+      "title": "product",
+      "price": 20,
+      "category": "Toys & Games",
+      "inStock": true
+    }
+  ],
+  "catagory": [
+    {
+      "id": "1",
+      "name": "Electronics"
+    },
+    {
+      "id": "2",
+      "name": "Fashion"
+    },
+    {
+      "id": "3",
+      "name": "Home & Kitchen"
+    },
+    {
+      "id": "4",
+      "name": "Beauty & Personal Care"
+    },
+    {
+      "id": "5",
+      "name": "Sports & Outdoors"
+    },
+    {
+      "id": "6",
+      "name": "Toys & Games"
+    },
+    {
+      "id": "7",
+      "name": "Books"
+    },
+    {
+      "id": "8",
+      "name": "Automotive"
+    },
+    {
+      "id": "9",
+      "name": "Health & Wellness"
+    },
+    {
+      "id": "10",
+      "name": "Pet Supplies"
+    },
+    {
+      "id": "b420",
+      "name": "book"
+    }
+  ]
+}
