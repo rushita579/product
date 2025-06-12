@@ -2,7 +2,7 @@ import { colors } from '../../style/Color';
 import { CHANGE_THEME } from '../types';
 
 const INITIAL_STATE = {
-  theme: colors.dark,
+  theme: 'dark',
 };
 
 export default function (state = INITIAL_STATE, action) {

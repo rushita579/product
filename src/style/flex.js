@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { moderateScale } from '../common/constants';
 
 
 export default StyleSheet.create({
@@ -106,4 +107,7 @@ export default StyleSheet.create({
   wrap: {
     flexWrap: 'wrap',
   },
+  container:{
+    marginHorizontal:moderateScale(20),
+  }
 });

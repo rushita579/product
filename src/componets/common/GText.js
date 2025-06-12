@@ -1,13 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { useSelector } from 'react-redux';
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import Typography from '../../style/typography';
+import { colors } from '../../style';
 
-const  GText = ({type, style, align, color, children, ...props}) => {
-  const colors = useSelector(state => state.theme.theme);
-
+const GText = ({type, style, align, color, children, ...props}) => {
+  // console.log(type,'type')
+  const theme = useSelector(state => state.theme.theme);
 
   const fontWeights = () => {
+    // console.log(type.charAt(0).toUpperCase())
     switch (type.charAt(0).toUpperCase()) {
       case 'R':
         return Typography.fontWeights.Regular;
@@ -23,6 +25,7 @@ const  GText = ({type, style, align, color, children, ...props}) => {
   };
 
   const fontSize = () => {
+    // console.log(type.slice(1))
     switch (type.slice(1)) {
       case '12':
         return Typography.fontSizes.f12;
@@ -54,24 +57,27 @@ const  GText = ({type, style, align, color, children, ...props}) => {
         return Typography.fontSizes.f36;
       case '40':
         return Typography.fontSizes.f40;
+      case '42':
+        return Typography.fontSizes.f42;
       case '46':
         return Typography.fontSizes.f46;
       default:
         return Typography.fontSizes.f14;
     }
   };
+
   return (
     <Text
       style={[
         type && {...fontWeights(), ...fontSize()},
-        {color: color ? color : colors.textColor},
+        {color: color ? color : colors[theme].textColor},
         align && {textAlign: align},
         style,
       ]}
       {...props}>
       {children}
     </Text>
-  )
-}
+  );
+};
 
 export default React.memo(GText);

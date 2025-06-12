@@ -15,7 +15,6 @@ const fontWeights = {
   },
 };
 
-
 const fontSizes = {
   f12: {
     fontSize: moderateScale(12),

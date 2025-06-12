@@ -9,10 +9,11 @@ const App = () => {
   // const colors = useSelector(state => state.theme.theme);
 
   return (
-    <View style={styles.flex}>
-      <StatusBar/>
+    <>
+       <StatusBar/>
       <AppNavigator />
-    </View>
+    </>
+     
   );
 };
 

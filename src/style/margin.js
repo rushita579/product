@@ -12,6 +12,9 @@ export default StyleSheet.create({
   m10: {
     margin: moderateScale(10),
   },
+  m15: {
+    margin: moderateScale(15),
+  },
   m20: {
     margin: moderateScale(20),
   },
@@ -119,6 +122,9 @@ export default StyleSheet.create({
   },
   mt15: {
     marginTop: getHeight(15),
+  },
+  mt70: {
+    marginTop: getHeight(70),
   },
   mt0: {
     marginTop: 0,
