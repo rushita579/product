@@ -10,8 +10,9 @@ const LightColor = {
   imagebg:'rgba(64,170,84,0.1)',
   btnColor1: '#1F222A',
   inputcolor:'#8B8B97',
-  inputbg:'#F7F7F7',
+  inputbg:'#F7F7F7',  
   inputBg: '#1F222A',
+  inputborder:'#E1E1E1'
 };
 
 const DarkColor = {
@@ -27,11 +28,13 @@ const DarkColor = {
   btnColor1: '#1F222A',
   inputcolor:'#8B8B97',
   inputbg:'#F0F0F0',
+  inputborder:'#E1E1E1'
+
 };
 
 // Common colors
 export const commonColor = {
-  white: '#FFFFFF',
+  white: '#F7F7F7',
   black: '#000000',
   grayScale1: '#F5F5F5',
   grayScale3: '#E0E0E0',
@@ -50,6 +53,8 @@ export const commonColor = {
   yellow: '#FFD300',
   darkColor: '#1F222A',
    textColor: '#16162E',
+  inputback:'#FFFFFF',
+   
 };
 
 export const colors = {

@@ -56,6 +56,7 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import ProductItem from './ProductItem';
+import GSafeAreaView from './common/GSafeAreaView';
 
 const BASE_URL = 'http://192.168.1.40:3001/products';
 const PER_PAGE = 10;
@@ -115,7 +116,8 @@ export default function ProductList({ navigation }) {
     }
   };
   return (
-    <View style={styles.container}>
+   <GSafeAreaView>
+     <View style={styles.container}>
       <Button title="Add Product" onPress={() => navigation.navigate('ProductForm')} />
       <FlatList
         data={products}
@@ -141,6 +143,7 @@ export default function ProductList({ navigation }) {
         }
       />
     </View>
+   </GSafeAreaView>
   );
 }
 

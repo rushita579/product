@@ -18,8 +18,8 @@ export default StyleSheet.create({
   m20: {
     margin: moderateScale(20),
   },
-  m25: {
-    margin: moderateScale(25),
+  m30: {
+    margin: moderateScale(30),
   },
   mb10: {
     marginBottom: getHeight(10),
@@ -152,6 +152,9 @@ export default StyleSheet.create({
   },
   mt50: {
     marginTop: getHeight(50),
+  },
+  mt60: {
+    marginTop: getHeight(60),
   },
   mt100: {
     marginTop: getHeight(100),

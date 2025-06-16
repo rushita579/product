@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
 
 export default function Onboarding4({navigation}) {
 const theme = useSelector(state => state.theme.theme);
-  console.log(colors[theme].bColor,'colors')
+  // console.log(colors[theme].bColor,'colors')
   console.log(' ====')
   // console.log(colors1,'colors1')
 

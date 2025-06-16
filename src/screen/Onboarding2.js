@@ -24,7 +24,6 @@ const theme = useSelector(state => state.theme.theme);
   
     
   return (
-    <>
       <GSafeAreaView>
         <View style={styles.container}>
              <Image source={require('../assets/image/Onboarding2.png')} style={[localStyle.Onboarding2_image,styles.mt70]}/>
@@ -40,7 +39,6 @@ const theme = useSelector(state => state.theme.theme);
       />
         </View>
       </GSafeAreaView>
-    </>
   );
 }
 

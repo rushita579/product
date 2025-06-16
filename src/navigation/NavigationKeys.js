@@ -5,4 +5,9 @@ export const StackNav = {
     Onboarding3:'Onboarding3',
     Onboarding4:'Onboarding4',
     Login:'Login',
+    Signup:'Signup',
+    ProductForm:'ProductForm',
+    ProductList:'ProductList',
+    Numberverification:'Numberverification',
+    Verified:'Verified',
 };

@@ -32,7 +32,7 @@ const fontSizes = {
     fontSize: moderateScale(20),
   },
   f22: {
-    fontSize: moderateScale(20),
+    fontSize: moderateScale(22),
   },
   f24: {
     fontSize: moderateScale(24),

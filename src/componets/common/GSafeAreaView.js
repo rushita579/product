@@ -10,12 +10,13 @@ const localStyle = getLocalStyle(theme);
 
   console.log(STATUSBAR_HEIGHT,'height')
   return (
-    <SafeAreaView {...props} edges={['top', 'right', 'left']} style={[localStyle.root]}>
+    <SafeAreaView  style={[localStyle.root]}  {...props}>
         <View
           style={[
             styles.statusBarFix,
             {height: STATUSBAR_HEIGHT},
             statusBar && {backgroundColor: statusBar.backgroundColor},
+            
           ]}
         />
       <StatusBar

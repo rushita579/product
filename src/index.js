@@ -2,6 +2,7 @@ import React from 'react';
 import {StatusBar, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import AppNavigator from './navigation';
+import Toast from 'react-native-toast-message'
 import { styles } from './style';
 
 
@@ -12,6 +13,7 @@ const App = () => {
     <>
        <StatusBar/>
       <AppNavigator />
+      <Toast/>
     </>
      
   );

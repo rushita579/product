@@ -22,7 +22,7 @@ export default function GButton({
   ...props
 }) {
   const theme = useSelector(state => state.theme.theme);
-  console.log(bgColor,'bgcolor')
+  // console.log(bgColor,'bgcolor')
   return (
     <TouchableOpacity
       style={[

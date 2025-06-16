@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { addProduct, updateProduct } from '../redux/slice/productSlice';
 import { Dropdown } from 'react-native-element-dropdown';
+import GSafeAreaView from './common/GSafeAreaView';
 // import Addicon from '../s';
 
 const BASE_URL = 'http://192.168.1.40:3001/products';
@@ -60,7 +61,7 @@ export default function ProductForm({ route, navigation }) {
         const res = await axios.post(BASE_URL, data);
         dispatch(addProduct(res.data));
       }
-      navigation.goBack();
+      navigation.goBack(); 
     } catch (err) {
       console.error('Error saving product:', err);
       alert('Failed to save product');
@@ -68,7 +69,8 @@ export default function ProductForm({ route, navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+   <GSafeAreaView>
+     <View style={styles.container}>
       <TextInput
         placeholder="Product Title"
         value={title}
@@ -98,10 +100,11 @@ export default function ProductForm({ route, navigation }) {
         <Switch value={inStock} onValueChange={setInStock} />
       </View>
 
-      <TouchableOpacity title={isEdit ? 'Update Product' : 'Add Product'} onPress={handleSubmit} >
+      <TouchableOpacity title={isEdit ? 'Update Product' : 'Add Product'} onPress={handleSubmit} style={styles.add}>
         <Text>Add</Text>
       </TouchableOpacity>
     </View>
+   </GSafeAreaView>
   );
 }
 
@@ -125,4 +128,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     justifyContent: 'space-between',
   },
+  add:{
+    backgroundColor:'#84c9e0',
+    width:'100',
+    height:'50',
+    alignSelf:'center',
+    alignItems:'center',
+    justifyContent:'center'
+  }
 });

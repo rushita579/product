@@ -1,5 +1,6 @@
-import {Button, StyleSheet, View} from 'react-native';
-import React from 'react';
+import {StyleSheet, View, Alert} from 'react-native';
+import Toast from 'react-native-toast-message'
+import React, {useState} from 'react';
 import {colors} from '../style';
 import GSafeAreaView from '../componets/common/GSafeAreaView';
 import Cartgreen from '../assets/svg/cartgreen.svg';
@@ -12,10 +13,58 @@ import GText from '../componets/common/GText';
 import GInput from '../componets/common/GInput';
 import GButton from '../componets/common/GButton';
 import {useSelector} from 'react-redux';
+import {StackNav} from '../navigation/NavigationKeys';
 
-export default function Login() {
+export default function Login({navigation}) {
   const theme = useSelector(state => state.theme.theme);
   const localStyle = getLocalStyle(theme);
+
+  const [PhoneNumber, setPhoneNumber] = useState('');
+  const [password, setPassword] = useState('');
+
+  const BASE_URL = `http://192.168.1.40:3001/users?mobile_number=${PhoneNumber}&password=${password}`;
+
+  console.log(BASE_URL, 'url');
+
+  const handleLogin = async () => {
+
+    if (!PhoneNumber || !password) {
+      Toast.show({
+        type: 'error',
+        text1: 'please enter valide phonenumber and password',
+      });
+    }
+
+    try {
+      const response = await fetch(BASE_URL);
+      const data = await response.json();
+      console.log(data, 'data');
+
+      const user = data.find(
+        user =>
+          user.mobile_number === PhoneNumber && user.password === password,
+      );
+
+      if (user) {
+        navigation.replace(StackNav.Signup);
+        Toast.show({
+          type: 'success',
+          text1: 'login success',
+        });
+      } else {
+        Toast.show({
+          type: 'error',
+          text1: 'Incorrect phone number or password',
+        });
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+       Toast.show({
+          type: 'error',
+          text1: 'Something went wrong, please try again later',
+        });
+    }
+  };
 
   return (
     <GSafeAreaView style={{backgroundColor: colors[theme].white}}>
@@ -37,20 +86,24 @@ export default function Login() {
           style={styles.mb30}>
           {strings.EGrocery}
         </GText>
-          <GInput
-            label={strings.PhoneNumber}
-            placeholder={'username'}
-            editable={true}
-          />
-          <GInput
-            _isSecure={true}
-            placeholder={'password'}
-            label={strings.Password}
-          />
+        <GInput
+          label={strings.PhoneNumber}
+          placeholder={'PhoneNumber'}
+          editable={true}
+          value={PhoneNumber}
+          onChangeText={setPhoneNumber}
+        />
+        <GInput
+          _isSecure={true}
+          placeholder={'Password'}
+          label={strings.Password}
+          value={password}
+          onChangeText={setPassword}
+        />
         <View style={styles.justifyEnd}>
           <GButton
             containerStyle={localStyle.login_button}
-            ss
+            onPress={handleLogin}
             title={'Login'}
             color={colors[theme].white}
             textType={'b16'}
@@ -80,9 +133,13 @@ export default function Login() {
             />
           </View>
         </View>
-        <View style={[styles.flexRow,styles.center]}>
-          <GText color={colors[theme].inputcolor} type={'m14'} >Don’t Have Account?</GText>
-          <GText color={colors[theme].green} type={'b14'} style={styles.ml15}>Sign up</GText>
+        <View style={[styles.flexRow, styles.center, styles.mt30]}>
+          <GText color={colors[theme].inputcolor} type={'m14'}>
+            {strings.Account}
+          </GText>
+          <GText color={colors[theme].green} type={'b14'} style={styles.ml15}>
+            {strings.Signup}
+          </GText>
         </View>
       </View>
     </GSafeAreaView>
@@ -99,9 +156,6 @@ const getLocalStyle = theme =>
       ...styles.center,
       ...styles.selfCenter,
       ...styles.mt70,
-    },
-    input: {
-      backgroundColor: colors[theme].inputbg,
     },
     login_button: {
       width: moderateScale(365),

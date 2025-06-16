@@ -1,14 +1,13 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
-import { useSelector } from 'react-redux';
+import {StyleSheet, Text, TextInput, View} from 'react-native';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import typography from '../../style/typography';
 import GText from './GText';
 import {colors, styles} from '../../style';
-import { getHeight, moderateScale } from '../../common/constants';
+import {getHeight, moderateScale} from '../../common/constants';
 
-
-export default GInput = props  => {
-     let {
+export default GInput = props => {
+  let {
     _value,
     label,
     inputContainerStyle,
@@ -33,24 +32,33 @@ export default GInput = props  => {
     insideLeftIcon,
     showError = true,
     rightAccessory,
-    bordercolor=null,
+    bordercolor = null,
+    width = null,
+    height = null,
+    borderRadius = null,
+    bgColor = null,
   } = props;
 
   const theme = useSelector(state => state.theme.theme);
-  
+
   // Change Text Input Value
   const onChangeText = val => {
     toGetTextFieldValue(val);
   };
   return (
-     <View style={styles.mv10}>
+    <View style={styles.mv10}>
       {label && (
         <View style={[localStyle.labelContainer, labelStyle]}>
           <View style={styles.flexRow}>
-            <GText style={localStyle.labelText} type={'m14'} color={colors[theme].inputcolor}>
+            <GText
+              style={localStyle.labelText}
+              type={'m14'}
+              color={colors[theme].inputcolor}>
               {label}
             </GText>
-            {required && <GText style={{color: colors[theme].lightRed}}>{'  '}</GText>}
+            {required && (
+              <GText style={{color: colors[theme].lightRed}}>{'  '}</GText>
+            )}
           </View>
         </View>
       )}
@@ -58,16 +66,18 @@ export default GInput = props  => {
         style={[
           localStyle.inputContainer,
           {
-            borderColor: _errorText ? colors[theme].lightRed : colors[theme].bColor,
+            borderColor: _errorText
+              ? colors[theme].lightRed
+              : colors[theme].bColor,
             height: multiline ? getHeight(75) : getHeight(50),
-            backgroundColor:colors[theme].inputbg,
-             
-
+            backgroundColor: colors[theme].inputbg,
           },
-          bordercolor
-              ? {borderColor: bordercolor}
-              : null ,
+          bordercolor ? {borderColor: bordercolor} : null,
+          bgColor
+            ? {backgroundColor: bgColor}
+            : {backgroundColor: colors[theme].inputbg},
           inputContainerStyle,
+          
         ]}>
         {insideLeftIcon ? (
           <View style={styles.pl10}>{insideLeftIcon()}</View>
@@ -81,7 +91,9 @@ export default GInput = props  => {
           autoFocus={_autoFocus}
           autoCorrect={false}
           autoCapitalize={autoCapitalize}
-          placeholderTextColor={placeholderTextColor || colors[theme].placeHolderColor}
+          placeholderTextColor={
+            placeholderTextColor || colors[theme].placeHolderColor
+          }
           onChangeText={onChangeText}
           keyboardType={keyBoardType}
           multiline={multiline}
@@ -89,7 +101,6 @@ export default GInput = props  => {
           onFocus={_onFocus}
           onBlur={_onBlur}
           placeholder={placeHolder}
-          
           style={[
             localStyle.inputBox,
             {color: colors[theme].textColor},
@@ -97,7 +108,6 @@ export default GInput = props  => {
             inputBoxStyle,
             _editable == false && {color: colors[theme].placeHolderColor},
           ]}
-          
           {...props}
         />
         {/* Right Icon And Content Inside TextInput */}
@@ -124,11 +134,11 @@ export default GInput = props  => {
         </GText>
       ) : null}
     </View>
-  )
-}
+  );
+};
 
 const localStyle = StyleSheet.create({
-   labelText: {
+  labelText: {
     textAlign: 'left',
     opacity: 0.9,
   },
@@ -155,4 +165,4 @@ const localStyle = StyleSheet.create({
     ...styles.mt5,
     ...styles.ml10,
   },
-})
+});
