@@ -12,7 +12,8 @@ const LightColor = {
   inputcolor:'#8B8B97',
   inputbg:'#F7F7F7',  
   inputBg: '#1F222A',
-  inputborder:'#E1E1E1'
+  inputborder:'#E1E1E1',
+  borderColor:'#ECECEC'
 };
 
 const DarkColor = {
@@ -28,7 +29,8 @@ const DarkColor = {
   btnColor1: '#1F222A',
   inputcolor:'#8B8B97',
   inputbg:'#F0F0F0',
-  inputborder:'#E1E1E1'
+  inputborder:'#E1E1E1',
+  borderColor:'#ECECEC'
 
 };
 
@@ -42,7 +44,7 @@ export const commonColor = {
   grayScale5: '#9E9E9E',
   grayScale7: '#616161',
   placeHolderColor: '#000F',
-  borderColor: '#35383F',
+   borderColor:'#ECECEC',
   tranparent: '#00000000',
   darkBg: '#181A20',
   green:'#40AA54',

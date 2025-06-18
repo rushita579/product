@@ -77,69 +77,53 @@
   ],
   "users": [
     {
-      "mobile_number": "9876543210",
-      "password": "Pass@1234"
-    },
-    {
-      "mobile_number": "9123456789",
-      "password": "Test@5678"
-    },
-    {
-      "mobile_number": "9012345678",
-      "password": "Qwerty@321"
-    },
-    {
-      "mobile_number": "9988776655",
-      "password": "Secure#789"
-    },
-    {
-      "mobile_number": "9765432109",
-      "password": "Login@111"
-    },
-    {
-      "mobile_number": "9345678901",
-      "password": "Hello@234"
-    },
-    {
-      "mobile_number": "9871203456",
-      "password": "User@2024"
-    },
-    {
-      "mobile_number": "9090909090",
-      "password": "Strong#456"
-    },
-    {
-      "mobile_number": "8888777766",
-      "password": "Demo@Pass1"
-    },
-    {
-      "mobile_number": "9234567890",
-      "password": "TryThis@789"
-    },
-    {
-      "mobile_number": "9345601234",
-      "password": "Check@098"
-    },
-    {
-      "mobile_number": "9865321470",
-      "password": "Mock@567"
-    },
-    {
-      "mobile_number": "9647382910",
-      "password": "TestCase@77"
-    },
-    {
-      "mobile_number": "9001122334",
-      "password": "Fake@1234"
-    },
-    {
       "mobile_number": "9798989898",
+      "password": "Temp@8888",
+      "name": "Manoj patel",
+      "first_name": "Manoj",
+      "id": "d6a7"
+    },
+    {
+      "id": "3546",
+      "name": "Manoj",
+      "lastName": "patel",
+      "mobile_number": "9798989898",
+      "gender": "male",
+      "birthday": "10/02/02",
       "password": "Temp@8888"
     },
     {
-      "id": "c7c8",
-      "mobile_number": "9875543210",
-      "password": "Pass@1234"
+      "id": "5468",
+      "mobile_number": "9798989898",
+      "password": "Temp@8888",
+      "name": "Manoj Kumar"
+    },
+    {
+      "id": "23ba",
+      "mobile_number": "9798989898",
+      "password": "Temp@8888",
+      "name": "Manoj Kumar"
+    },
+    {
+      "id": "d7fa",
+      "name": "hello",
+      "password": "hello1123",
+      "mobile_number": "8527419630"
+    },
+    {
+      "id": "af92",
+      "name": "hello",
+      "password": "hell123",
+      "mobile_number": "7147852096"
+    },
+    {
+      "id": "f1be",
+      "name": "",
+      "lastName": "",
+      "mobile_number": "",
+      "gender": "",
+      "birthday": "",
+      "password": ""
     }
   ]
 }

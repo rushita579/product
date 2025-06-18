@@ -1,3 +1,4 @@
+//Library import
 import {Dimensions, Platform, StatusBar} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 

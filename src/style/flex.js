@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { moderateScale } from '../common/constants';
+import { moderateScale } from '@common/constants';
 
 
 export default StyleSheet.create({

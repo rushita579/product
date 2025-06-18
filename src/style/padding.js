@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {getHeight, moderateScale} from '../common/constants';
+import {getHeight, moderateScale} from '@common/constants';
 
 // All Padding Styles
 export default StyleSheet.create({

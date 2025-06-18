@@ -21,4 +21,9 @@ export default{
     Resend:'Resend',
     Verified:'Verified!!',
     successfullyverified:'Hurrah!!  You have successfully verified the account',
+    FristName:'Frist Name',
+    LastName:'Last Name',
+    Birthday:'Birthday',
+    Gender:'Gender'
+
 }

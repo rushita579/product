@@ -10,4 +10,15 @@ export const StackNav = {
     ProductList:'ProductList',
     Numberverification:'Numberverification',
     Verified:'Verified',
+    Home:'Home',
+    Dashboard:'DashBoard',
+    ProfileDetail:'ProfileDetail'
+};
+
+export const TabNav = {
+  Home: 'Home',
+  Profile: 'Profile',
+  Menu:'Menu',
+  Cart:'Cart',
+Save:'Save',
 };

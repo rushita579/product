@@ -1,4 +1,3 @@
-import { colors } from '../../style/Color';
 import { CHANGE_THEME } from '../types';
 
 const INITIAL_STATE = {

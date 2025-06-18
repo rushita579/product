@@ -1,10 +1,11 @@
+//Library import
 import { StyleSheet} from 'react-native'
 import React from 'react'
-import { StackNav } from '../NavigationKeys'
-import { StackRoute } from '../NavigationRoutes'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import typography from '../../style/typography';
 
+//Local import
+import { StackRoute } from '../NavigationRoutes'
+import { StackNav } from '../NavigationKeys'
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,8 @@ export default function Stacknavigation() {
         <Stack.Screen name={StackNav.Login} component={StackRoute.Login}/>
         <Stack.Screen name={StackNav.Signup} component={StackRoute.Signup}/>
         <Stack.Screen name={StackNav.Numberverification} component={StackRoute.Numberverification}/>
-        <Stack.Screen name={StackNav.Verified} component={StackRoute.Verified}/>
+        <Stack.Screen name={StackNav.Dashboard} component={StackRoute.Dashboard}/>
+        <Stack.Screen name={StackNav.ProfileDetail} component={StackRoute.ProfileDetail}/>
         
       </Stack.Navigator>
   )

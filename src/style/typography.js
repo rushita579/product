@@ -1,4 +1,4 @@
-import { moderateScale } from "../common/constants";
+import { moderateScale } from "@common/constants";
 
 const fontWeights = {
   Regular: {
