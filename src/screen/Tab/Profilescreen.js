@@ -10,10 +10,11 @@ import {
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
+import GText from '@components/common/GText';
 //Local import
 import {moderateScale} from '@common/constants';
 import {colors} from '@style/Color';
-import GText from '@components/common/GText';
+import {StackNav} from '@navigation/NavigationKeys';
 import {styles} from '@style/index';
 import {
   Delivery,
@@ -26,26 +27,25 @@ import {
   Right_arrow,
   Setting,
 } from '@assets/svg';
-import {StackNav} from '@navigation/NavigationKeys';
+import {useNavigation} from '@react-navigation/native';
 import {removeAsyncstorageData} from '@utils/helpers';
 import {logoutuser} from '@redux/slice/userSlice';
-import { useNavigation } from '@react-navigation/native';
 
 export default function Profilescreen() {
   const dispatch = useDispatch();
   const navigation = useNavigation();
+
   const theme = useSelector(state => state.theme.theme);
   const user = useSelector(state => state.user.user);
-
   const localStyle = getLocalStyle(theme);
-  
+
   const onpressLogout = async () => {
     await removeAsyncstorageData('userCredentials');
     dispatch(logoutuser());
     navigation.replace(StackNav.Login);
   };
   const onpressProfile = () => {
-      navigation.navigate(StackNav.ProfileDetail);
+    navigation.navigate(StackNav.ProfileDetail);
   };
 
   return (
@@ -89,7 +89,7 @@ export default function Profilescreen() {
       </View>
       <View>
         <View style={localStyle.contact_box}>
-          <TouchableOpacity  onPress={onpressProfile}>
+          <TouchableOpacity onPress={onpressProfile}>
             <Contactinformation
               icon={<Profile />}
               title={' My Profile'}

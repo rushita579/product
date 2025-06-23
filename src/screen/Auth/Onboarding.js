@@ -16,8 +16,6 @@ export default function Onboarding({navigation}) {
   const localStyle = getLocalStyle(theme);
   const state = useSelector(state => state.user);
 
-  
-
   useEffect(() => {
     const checkFirstTime = async () => {
       const isFirstTime = await getAsyncStorageData('issecondtime');

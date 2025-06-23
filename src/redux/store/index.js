@@ -19,14 +19,16 @@ import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers } from 'redux';
-import productReducer from '../slice/productSlice';
 import ThemeReducer from '../slice/themeslice';
 import UserReducer from '../slice/userSlice';
+import ProductReducer, { packReducer, productReducer } from '../slice/productSlice';
 // Combine reducers
 const rootReducer = combineReducers({
-  products: productReducer,
+   products: productReducer,
+  packs: packReducer,
   theme: ThemeReducer,
   user: UserReducer,
+
 });
 // Persist config
 const persistConfig = {

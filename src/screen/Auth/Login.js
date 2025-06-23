@@ -2,22 +2,20 @@
 import {StyleSheet, View, Alert} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import React, {useState} from 'react';
-import Toast from 'react-native-toast-message'
-
+import Toast from 'react-native-toast-message';
 
 //local import
-import {colors ,styles} from '@style';
+import {colors, styles} from '@style';
 import {moderateScale} from '@common/constants';
-import {  Cartgreen,Apple_icon, Google_icon } from '@assets/svg';
+import {Cartgreen, Apple_icon, Google_icon} from '@assets/svg';
 import GSafeAreaView from '@components/common/GSafeAreaView';
 import {StackNav} from '@navigation/NavigationKeys';
-import { setAsyncStorageData } from '@utils/helpers';
+import {setAsyncStorageData} from '@utils/helpers';
 import strings from '@i18n/strings';
 import GText from '@components/common/GText';
 import GInput from '@components/common/GInput';
 import GButton from '@components/common/GButton';
-import { loginuser } from '@redux/slice/userSlice';
-
+import {loginuser} from '@redux/slice/userSlice';
 
 export default function Login({navigation}) {
   const dispatch = useDispatch();
@@ -29,12 +27,11 @@ export default function Login({navigation}) {
 
   const BASE_URL = `http://192.168.1.40:3001/users?mobile_number=${PhoneNumber}&password=${password}`;
 
-  const Signup = () =>{
-        navigation.navigate(StackNav.Signup);
-  }
+  const Signup = () => {
+    navigation.navigate(StackNav.Signup);
+  };
 
   const handleLogin = async () => {
-
     if (!PhoneNumber || !password) {
       Toast.show({
         type: 'error',
@@ -52,8 +49,8 @@ export default function Login({navigation}) {
       );
 
       if (user) {
-        await setAsyncStorageData('userCredentials',user)
-        dispatch(loginuser(user))
+        await setAsyncStorageData('userCredentials', user);
+        dispatch(loginuser(user));
         navigation.replace(StackNav.Dashboard);
         Toast.show({
           type: 'success',
@@ -67,10 +64,10 @@ export default function Login({navigation}) {
       }
     } catch (error) {
       console.error('Error during login:', error);
-       Toast.show({
-          type: 'error',
-          text1: 'Something went wrong, please try again later',
-        });
+      Toast.show({
+        type: 'error',
+        text1: 'Something went wrong, please try again later',
+      });
     }
   };
 
@@ -149,12 +146,12 @@ export default function Login({navigation}) {
             {strings.Signup}
           </GText> */}
           <GButton
-              title={strings.Signup}
-              bgColor={'white'}
-              color={colors[theme].green}
-              textType={'b16'}
-              onPress={Signup}
-            />
+            title={strings.Signup}
+            bgColor={'white'}
+            color={colors[theme].green}
+            textType={'b16'}
+            onPress={Signup}
+          />
         </View>
       </View>
     </GSafeAreaView>

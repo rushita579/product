@@ -12,7 +12,10 @@ export const StackNav = {
     Verified:'Verified',
     Home:'Home',
     Dashboard:'DashBoard',
-    ProfileDetail:'ProfileDetail'
+    ProfileDetail:'ProfileDetail',
+    PopularPack:'PopularPack',
+    NewItem:'NewItem',
+    BundleProductdetils:'BundleProductdetils',
 };
 
 export const TabNav = {

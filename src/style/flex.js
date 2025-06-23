@@ -108,7 +108,7 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
   },
   container:{
-    marginHorizontal:moderateScale(30),
+    marginHorizontal:moderateScale(16),
 
   }
 });

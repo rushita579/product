@@ -1,80 +1,338 @@
 {
   "products": [
-    {
-      "title": "product 11",
-      "price": 200,
-      "category": "Fashion",
-      "inStock": true,
-      "id": "46bd"
-    },
-    {
-      "id": "b631",
-      "title": "Product ",
-      "price": 20,
-      "category": "Sports & Outdoors",
-      "inStock": true
-    },
-    {
-      "id": "4a76",
-      "title": "product",
-      "price": 20,
-      "category": "Home & Kitchen",
-      "inStock": true
-    },
-    {
-      "id": "8137",
-      "title": "Product A",
-      "price": 200,
-      "category": "Books",
-      "inStock": false
-    }
-  ],
-  "catagory": [
-    {
-      "id": "1",
-      "name": "Electronics"
-    },
-    {
-      "id": "2",
-      "name": "Fashion"
-    },
-    {
-      "id": "3",
-      "name": "Home & Kitchen"
-    },
-    {
-      "id": "4",
-      "name": "Beauty & Personal Care"
-    },
-    {
-      "id": "5",
-      "name": "Sports & Outdoors"
-    },
-    {
-      "id": "6",
-      "name": "Toys & Games"
-    },
-    {
-      "id": "7",
-      "name": "Books"
-    },
-    {
-      "id": "8",
-      "name": "Automotive"
-    },
-    {
-      "id": "9",
-      "name": "Health & Wellness"
-    },
-    {
-      "id": "10",
-      "name": "Pet Supplies"
-    },
-    {
-      "id": "b420",
-      "name": "book"
-    }
-  ],
+  {
+    "id": "prod001",
+    "product_name": "Perry’s Ice CreamBanana",
+    "weight": "800 Gm",
+    "original_price": "$13",
+    "description": "Fresh cauliflower from the garden.",
+    "review_star": 4.5,
+    "review_text": "Very fresh and tasty.",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  },
+  {
+    "id": "prod002",
+    "product_name": "Vanilla Ice Cream",
+    "weight": "500 Gm",
+    "original_price": "$12",
+    "description": "Farm fresh potatoes full of nutrients.",
+    "review_star": 4.2,
+    "review_text": "Good quality and value.",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod003",
+   "product_name": "Meat",
+    "weight": "1 kg",
+    "original_price": "$15",
+    "description": "Juicy red tomatoes from the farm.",
+    "review_star": 4.8,
+    "review_text": "Perfect for salads and cooking.",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  },
+  {
+    "id": "prod004",
+   "product_name": "Fresh Sea Tuna Fish",
+    "weight": "1 kg",
+    "original_price": "$14",
+    "description": "Ripe and sweet papayas.",
+    "review_star": 4.6,
+    "review_text": "Very sweet and fresh.",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod005",
+   "product_name": "Classic pantz Drypers",
+    "weight": "1 box",
+    "original_price": "$13",
+    "description": "High quality fresh meat.",
+    "review_star": 4.9,
+    "review_text": "Premium and fresh cut.",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  },
+  {
+    "id": "prod006",
+   "product_name": "Cabbage",
+    "weight": "1 kg",
+    "original_price": "$13",
+    "description": "Fresh tuna fish from the sea.",
+    "review_star": 4.3,
+    "review_text": "Perfectly fresh and clean.",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  }
+],
+
+ "categories": [
+  { "id": "cat001", "name": "Vegetables" },
+  { "id": "cat002", "name": "Meat & Fish" },
+  { "id": "cat003", "name": "Medicine" },
+  { "id": "cat004", "name": "Baby Care" },
+  { "id": "cat005", "name": "Frozen Items" }
+],
+    "packs": [
+  {
+    "id": "pack001",
+    "pack_name": "Medium Spices Pack",
+    "short_description": "Onion, Oil, Salt...",
+    "Weight": "25 kg",
+    "size": "Medum",
+    "review_star": 4.7,
+    "selling_price": "$35",
+    "original_price": "$20",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+        "product_ids": [
+  {
+    "id": "prod001",
+    "name": "Perry’s Ice Cream Banana",
+    "weight": "800 Gm",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod002",
+    "name": "Vanilla Ice Cream",
+    "weight": "500 Gm",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  },
+  {
+    "id": "prod003",
+    "name": "Fresh Sea Tuna",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68"
+  },
+  {
+    "id": "prod004",
+    "name": "Fish",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f"
+  },
+  {
+    "id": "prod005",
+    "name": "Classic Pantz",
+    "weight": "1 KG",
+    "image": "https://images.unsplash.com/photo-1618354691244-46b1e4f3127a"
+  },
+  {
+    "id": "prod006",
+    "name": "Drypers",
+    "weight": "750 Ml",
+    "image": "https://images.unsplash.com/photo-1593622407420-4c7f41603c1c"
+  }
+]
+  },
+  {
+    "id": "pack002",
+    "pack_name": "Small Bundle Pack",
+    "short_description": "Onion, Oil, Salt...",
+    "Weight": "12 kg",
+    "size": "Small",
+    "review_star": 4.2,
+    "selling_price": "$24",
+    "original_price":"$15",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445",
+    "product_ids": [
+  {
+    "id": "prod001",
+    "name": "Perry’s Ice Cream Banana",
+    "weight": "800 Gm",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod002",
+    "name": "Vanilla Ice Cream",
+    "weight": "500 Gm",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  }
+]
+  },
+  {
+    "id": "pack003",
+    "pack_name": "Big Vegetable Pack",
+    "short_description": "Onion, Oil, Salt...",
+    "Weight": "35 kg",
+    "size": "Large",
+    "review_star": 4.6,
+    "selling_price": "$12",
+    "original_price": "$10",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+    "product_ids": [
+  {
+    "id": "prod001",
+    "name": "Perry’s Ice Cream Banana",
+    "weight": "800 Gm",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod002",
+    "name": "Vanilla Ice Cream",
+    "weight": "500 Gm",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  }
+]
+  },
+  {
+    "id": "pack004",
+    "pack_name": "Big Fruits Pack",
+    "short_description": "Onion, Oil, Salt...",
+    "Weight": "30 kg",
+    "size": "Large",
+    "review_star": 4.8,
+    "selling_price": "$67",
+    "original_price":"$54",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445",
+   "product_ids": [
+  {
+    "id": "prod001",
+    "name": "Perry’s Ice Cream Banana",
+    "weight": "800 Gm",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod002",
+    "name": "Vanilla Ice Cream",
+    "weight": "500 Gm",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  },
+  {
+    "id": "prod003",
+    "name": "Fresh Sea Tuna",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68"
+  },
+  {
+    "id": "prod004",
+    "name": "Fish",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f"
+  }
+]
+  },
+  {
+    "id": "pack005",
+    "pack_name": "Small Fruits Pack",
+    "short_description": "Onion, Oil, Salt...",
+    "Weight": "10 kg",
+    "size": "Small",
+    "review_star": 4.5,
+    "selling_price": "$38",
+    "original_price": "$34",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+    "product_ids": [
+  {
+    "id": "prod001",
+    "name": "Perry’s Ice Cream Banana",
+    "weight": "800 Gm",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  }
+]
+  },
+  {
+    "id": "pack006",
+    "pack_name": "Big Spices Pack",
+    "short_description": "Onion, Oil, Salt...",
+    "Weight": "40 kg",
+    "size": "Extra Large",
+    "review_star": 4.9,
+    "selling_price": "$89",
+    "original_price": "$59",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445",
+    "product_ids": [
+  {
+    "id": "prod001",
+    "name": "Perry’s Ice Cream Banana",
+    "weight": "800 Gm",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod002",
+    "name": "Vanilla Ice Cream",
+    "weight": "500 Gm",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  },
+  {
+    "id": "prod003",
+    "name": "Fresh Sea Tuna",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68"
+  },
+  {
+    "id": "prod004",
+    "name": "Fish",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f"
+  }
+]
+  },
+  {
+    "id": "pack007",
+    "pack_name": "Big Spices Pack",
+    "short_description": "Onion, Oil, Salt...",
+    "Weight": "38 kg",
+    "size": "Extra Large",
+    "review_star": 4.9,
+    "selling_price": "$89",
+    "original_price":"$74",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+    "product_ids": [
+  {
+    "id": "prod001",
+    "name": "Perry’s Ice Cream Banana",
+    "weight": "800 Gm",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod002",
+    "name": "Vanilla Ice Cream",
+    "weight": "500 Gm",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  },
+  {
+    "id": "prod003",
+    "name": "Fresh Sea Tuna",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68"
+  }
+]
+  },
+  {
+    "id": "pack008",
+    "pack_name": "Big Spices Pack",
+    "short_description": "Onion, Oil, Salt...",
+    "Weight": "42 kg",
+    "size": "Extra Large",
+    "review_star": 4.9,
+    "selling_price": "$89",
+    "original_price": "$24",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445",
+    "product_ids": [
+  {
+    "id": "prod001",
+    "name": "Perry’s Ice Cream Banana",
+    "weight": "800 Gm",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod002",
+    "name": "Vanilla Ice Cream",
+    "weight": "500 Gm",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+  },
+  {
+    "id": "prod003",
+    "name": "Fresh Sea Tuna",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68"
+  },
+  {
+    "id": "prod004",
+    "name": "Fish",
+    "weight": "1 Kg",
+    "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f"
+  }
+]
+  }
+],
+
+
   "users": [
     {
       "mobile_number": "9798989898",
@@ -86,44 +344,33 @@
     {
       "id": "3546",
       "name": "Manoj",
-      "lastName": "patel",
+      "last_name": "patel",
       "mobile_number": "9798989898",
       "gender": "male",
       "birthday": "10/02/02",
       "password": "Temp@8888"
     },
     {
-      "id": "5468",
-      "mobile_number": "9798989898",
-      "password": "Temp@8888",
-      "name": "Manoj Kumar"
+      "id": "a53e",
+      "name": "manoj",
+      "password": "675211572",
+      "mobile_number": "742668553259"
     },
     {
-      "id": "23ba",
-      "mobile_number": "9798989898",
-      "password": "Temp@8888",
-      "name": "Manoj Kumar"
+      "id": "e9d7",
+      "name": "raj patel",
+      "first_name": "raj",
+      "last_name": "patel",
+      "mobile_number": "87465132498",
+      "gender": "male",
+      "birthday": "10/8/2",
+      "password": "4783462398472"
     },
     {
-      "id": "d7fa",
-      "name": "hello",
-      "password": "hello1123",
-      "mobile_number": "8527419630"
-    },
-    {
-      "id": "af92",
-      "name": "hello",
-      "password": "hell123",
-      "mobile_number": "7147852096"
-    },
-    {
-      "id": "f1be",
-      "name": "",
-      "lastName": "",
-      "mobile_number": "",
-      "gender": "",
-      "birthday": "",
-      "password": ""
+      "id": "bfbb",
+      "name": "raj",
+      "password": "334232342334",
+      "mobile_number": "54665213568456"
     }
   ]
 }

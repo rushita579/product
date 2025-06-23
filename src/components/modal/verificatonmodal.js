@@ -5,7 +5,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 //Library import
-import Righticon_green from '@assets/svg';
+import {Righticon_green} from '@assets/svg';
 import GText from '@components/common/GText';
 
 import {colors, styles} from '@style';

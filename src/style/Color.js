@@ -13,7 +13,8 @@ const LightColor = {
   inputbg:'#F7F7F7',  
   inputBg: '#1F222A',
   inputborder:'#E1E1E1',
-  borderColor:'#ECECEC'
+  textgray:'#16162e'
+
 };
 
 const DarkColor = {
@@ -30,7 +31,7 @@ const DarkColor = {
   inputcolor:'#8B8B97',
   inputbg:'#F0F0F0',
   inputborder:'#E1E1E1',
-  borderColor:'#ECECEC'
+  textgray:'rgba(22, 22, 46, 0.5)'
 
 };
 
@@ -56,6 +57,9 @@ export const commonColor = {
   darkColor: '#1F222A',
    textColor: '#16162E',
   inputback:'#FFFFFF',
+  textgray:'rgba(22, 22, 46, 0.5)',
+  backgroundColor:'#FFFFFF',
+  addborder:'#D9D9D9',
    
 };
 

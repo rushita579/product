@@ -1,18 +1,22 @@
-// import React from 'react';
+//Librery import
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+
+//Local import
+import strings from '@i18n/strings';
 import GSafeAreaView from '@components/common/GSafeAreaView';
 import GInput from '@components/common/GInput';
-import strings from '@i18n/strings';
+import {updateuser} from '@redux/slice/userSlice';
 import {colors} from '@style/Color';
 import {useDispatch, useSelector} from 'react-redux';
 import {styles} from '@style/index';
 import GButton from '@components/common/GButton';
 import {moderateScale} from '@common/constants';
-import {updateuser} from '@redux/slice/userSlice';
-import GHeader from '@components/common/GHeader';
 import Toast from 'react-native-toast-message';
+import GHeader from '@components/common/GHeader';
+import { setAsyncStorageData } from '@utils/helpers';
+import { BASE_URL, users } from '@api/productApi';
 
 export default function ProfileDetail() {
   const dispatch = useDispatch();
@@ -28,43 +32,67 @@ export default function ProfileDetail() {
   const [birthday, setBirthday] = useState('');
   const [password, setPassword] = useState('');
 
+
+  useEffect(()=>{
+    
+    setFirstName(user.first_name)
+    setLastName(user.last_name)
+    setPhoneNumber(user.mobile_number)
+    setGender(user.gender)
+    setBirthday(user.birthday)
+    setPassword(user.password)
+  },[user])
+
   const onpressSave = async () => {
-    console.log(user, 'user');
-    console.log(user.id, 'user id');
+    
 
     if (!user?.id) {
       console.error('User ID is missing. Cannot update.');
       return;
     }
+    
+   
 
     if (
-      !firstName.trim() ||
-      !lastName.trim() ||
-      !phoneNumber.trim() ||
-      !gender.trim() ||
-      !birthday.trim() ||
-      !password.trim()
+    
+      !firstName?.trim() ||
+      !lastName?.trim() ||
+      !phoneNumber?.trim() ||
+      !gender?.trim() ||
+      !birthday?.trim() ||
+      !password?.trim()
     ) {
       Toast.show({
         type: 'error',
         text1: 'Please fill all required fields',
       });
+      return
     }
-
     const updatedUser = {
-      id: user.id,
-      name: firstName,
-      lastName,
+      id:user.id,
+      name:firstName + ' ' +lastName,
+      first_name: firstName,
+      last_name:lastName,
       mobile_number: phoneNumber,
-      gender,
-      birthday,
-      password,
+      gender:gender,
+      birthday:birthday,
+      password:password,
     };
+    
 
     try {
-      await axios.put(`http://192.168.1.40:3001/users/${user.id}`, updatedUser);
-      await setAsyncStorageData('userCredentials', updatedUser);
+      let res = await axios.put(`${BASE_URL}${users}${user.id}`, updatedUser);
+
+      if(res.status == 200){
+         await setAsyncStorageData('userCredentials', updatedUser);
       dispatch(updateuser(updatedUser));
+      Toast.show({
+                type: 'success',
+                text1: 'profile updated successfully',
+              });
+      }
+      
+     
     } catch (error) {
       console.error('Failed to update user:', error);
     }

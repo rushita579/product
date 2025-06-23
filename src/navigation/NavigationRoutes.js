@@ -5,8 +5,6 @@ import Onboarding3 from "@screen/Auth/Onboarding3";
 import Onboarding4 from "@screen/Auth/Onboarding4";
 import Login from "@screen/Auth/Login";
 import Signup from "@screen/Auth/Signup";
-import ProductForm from "@components/ProductFrom";
-import ProductList from "@components/Productlist";
 import Numberverification from "@screen/Auth/Numberverification";
 import Dashboard from "@screen/App/Dashboard";
 import Homescreen from "@screen/Tab/Homescreen";
@@ -15,6 +13,9 @@ import Savescreen from "@screen/Tab/Savescreen";
 import Menuscreen from "@screen/Tab/Menuscreen";
 import Cartscreen from "@screen/Tab/Cartscreen";
 import ProfileDetail from "@screen/Auth/ProfileDetail";
+import PopularPack from "@screen/Auth/PopularPack";
+import NewItem from "@screen/Auth/NewItem";
+import BundleProductdetils from "@screen/Auth/BundleProductdetils";
 
 export const StackRoute = {
     Onboarding,
@@ -23,11 +24,12 @@ export const StackRoute = {
     Onboarding4,
     Login,
     Signup,
-    ProductForm,
-    ProductList,
     Numberverification,
     Dashboard,
     ProfileDetail,
+    PopularPack,
+    NewItem,
+    BundleProductdetils,
 
 };
 export const TabRoute = {
@@ -36,5 +38,6 @@ export const TabRoute = {
   Savescreen,
   Menuscreen,
   Cartscreen,
+  PopularPack,
 
 };

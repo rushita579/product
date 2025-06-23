@@ -24,6 +24,17 @@ export default{
     FristName:'Frist Name',
     LastName:'Last Name',
     Birthday:'Birthday',
-    Gender:'Gender'
-
+    Gender:'Gender',
+    CurrentLocation:'Current Location',
+    ChhatakSyhlet:'Chhatak,Syhlet',
+    PopularPack:'Popular Pack',
+    ViewAll:'View All',
+    OurNewItem:'OurNewItem',
+    BundelDetails:'Bundel Details',
+    BundlePack:'Bundle Pack',
+    Weight:'Weight',
+    size:'size',
+    items:'Item’s',
+    PackDetails:'Pack Details',
+    Review:'Review',
 }

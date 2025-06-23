@@ -14,7 +14,6 @@ import GButton from '@components/common/GButton';
 import {Right_icon} from '@assets/svg';
 import {moderateScale} from '@common/constants';
 
-
 export default function Signup({navigation}) {
   const theme = useSelector(state => state.theme.theme);
   const localStyle = getLocalStyle(theme);
@@ -23,16 +22,12 @@ export default function Signup({navigation}) {
   const [PhoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
 
-
   const Numberverification = async () => {
-   
-     navigation.navigate('Numberverification', {
-          name: Name,
-          password: password,     
-          phoneNumber: PhoneNumber,
-        });
-
-    
+    navigation.navigate('Numberverification', {
+      name: Name,
+      password: password,
+      phoneNumber: PhoneNumber,
+    });
   };
 
   return (
@@ -59,7 +54,8 @@ export default function Signup({navigation}) {
             label={strings.PhoneNumber}
             placeholder={strings.PhoneNumber}
             value={PhoneNumber}
-            onChangeText={setPhoneNumber}s
+            onChangeText={setPhoneNumber}
+            s
           />
           <GInput
             _isSecure={true}

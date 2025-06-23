@@ -39,6 +39,9 @@ export default StyleSheet.create({
   mb30: {
     marginBottom: getHeight(30),
   },
+   mb33: {
+    marginBottom: getHeight(33),
+  },
   mb40: {
     marginBottom: getHeight(40),
   },
@@ -78,6 +81,9 @@ export default StyleSheet.create({
   ml10: {
     marginLeft: moderateScale(10),
   },
+  ml12: {
+    marginLeft: moderateScale(12),
+  },
   ml15: {
     marginLeft: moderateScale(15),
   },
@@ -107,6 +113,9 @@ export default StyleSheet.create({
   },
   mr25: {
     marginRight: moderateScale(25),
+  },
+  mr50: {
+    marginRight: moderateScale(50),
   },
   mr5: {
     marginRight: moderateScale(5),

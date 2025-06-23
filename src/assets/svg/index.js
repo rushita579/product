@@ -25,11 +25,28 @@ import Payment from './payment.svg';
 import Logout from './logout.svg';
 import Right_arrow from './right_arrow.svg';
 import Left_icon from './left_icon.svg';
-
-
+import Three_dots from './three_dots.svg';
+import Down_arrow from './down_arrow.svg';
+import Search from './search.svg';
+import Location from './Location.svg';
+import Add_icon from './add_icon.svg';
+import Addicon_green from './plus.svg';
+import Remove_icon from './minus.svg';
+import Cart_by from './cart.svg';
+import Blankstar from './blankstar.png';
+import Fillstar from './fillstar.png';
 
 
 export{
+    Blankstar,
+    Fillstar,
+    Cart_by,
+    Remove_icon,
+    Addicon_green,
+    Three_dots,
+    Down_arrow,
+    Search,
+    Location,
     Apple_icon,
     Cartgreen,
     Cartwhite,
@@ -57,4 +74,5 @@ export{
     Logout,
     Right_arrow,
     Left_icon,
+    Add_icon,
 };

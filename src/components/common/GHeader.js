@@ -15,29 +15,35 @@ export default function GHeader(props) {
   const navigation = useNavigation();
   const theme = useSelector(state => state.theme.theme);
 
-  const goBack = () => navigation.goBack();
+  const onpressgoBack = () => {
+    
+    navigation.goBack() 
+  };
+ 
+  
   return (
     <View style={[localStyles.container, !!isHideBack && styles.pr10]}>
       <View style={[styles.flexRow, styles.flex,styles.itemsCenter]}>
-        {!isHideBack && (
-          <TouchableOpacity
-            style={localStyles.backbutton}
-            onPress={onPressBack || goBack}>
-
-              <Left_icon />
-            </TouchableOpacity>
-        )}
+        
         {!!isLeftIcon && isLeftIcon}
 
         <GText
           numberOfLines={1}
           style={[styles.pr10, styles.mr10, localStyles.titleText]}
           color={colors[theme].textColor}
-          type={'B24'}
+          type={'B18'}
           align={'center'}
           >
           {title}
         </GText>
+        {!isHideBack && (
+          <TouchableOpacity
+            style={localStyles.backbutton}
+            onPress={ onpressgoBack}>
+              
+              <Left_icon />
+            </TouchableOpacity>
+        )}
       </View>
       {!!rightIcon && rightIcon}
     </View>
@@ -58,5 +64,6 @@ const localStyles = StyleSheet.create({
     position:'absolute',
     left:0,
     ...styles.center,
+    ...styles.p10,
   }
 });

@@ -1,8 +1,6 @@
-import axios from 'axios';
 
-const BASE_URL = 'http://192.168.0.xxx:3001/products';
+export const BASE_URL = 'http://192.168.1.40:3001/'
 
-export const fetchProducts = () => axios.get(BASE_URL);
-export const createProduct = (data) => axios.post(BASE_URL, data);
-export const updateProductById = (id, data) => axios.put(`${BASE_URL}/${id}`, data);
-export const deleteProductById = (id) => axios.delete(`${BASE_URL}/${id}`);
+export const users= 'users'
+export const products= 'products'
+export const packs= 'packs'

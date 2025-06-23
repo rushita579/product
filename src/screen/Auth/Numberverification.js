@@ -1,9 +1,9 @@
 //Library import
 import {StyleSheet, View} from 'react-native';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 
-//Local import
+//Local imports
 import {colors, styles} from '@style';
 import GSafeAreaView from '@components/common/GSafeAreaView';
 import GText from '@components/common/GText';
@@ -13,28 +13,26 @@ import GInput from '@components/common/GInput';
 import GButton from '@components/common/GButton';
 import Toast from 'react-native-toast-message';
 import Verificatonmodal from '@components/modal/verificatonmodal';
-import { Digit_code } from '@assets/svg';
+import {Digit_code} from '@assets/svg';
 
-
-export default function Numberverification({navigation,route}) {
+export default function Numberverification({navigation, route}) {
   const theme = useSelector(state => state.theme.theme);
-   const {name, password, phoneNumber} = route.params;
+  const {name, password, phoneNumber} = route.params;
   const localStyle = getLocalStyle(theme);
-   const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
+  const BASE_URL = `http://192.168.1.40:3001/users`;
 
-   const BASE_URL = `http://192.168.1.40:3001/users`;
-
-   const Verified = async () => {
+  const Verified = async () => {
     if (!name || !name.trim() || !password || !phoneNumber) {
-    Toast.show({
-      type: 'error',
-      text1: 'Missing required fields',
-      text2: 'Please enter name, password, and phone number.',
-    });
-    return;
-  }
- 
+      Toast.show({
+        type: 'error',
+        text1: 'Missing required fields',
+        text2: 'Please enter name, password, and phone number.',
+      });
+      return;
+    }
+
     try {
       const userData = {
         name: name.trim(),
@@ -43,7 +41,7 @@ export default function Numberverification({navigation,route}) {
       };
 
       // POST to json-server
-      const response = await fetch(BASE_URL,{
+      const response = await fetch(BASE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +54,7 @@ export default function Numberverification({navigation,route}) {
           type: 'success',
           text1: 'User signed up successfully!',
         });
-        setModalVisible(true)
+        setModalVisible(true);
       } else {
         throw new Error('Failed to create user');
       }
@@ -68,9 +66,8 @@ export default function Numberverification({navigation,route}) {
       });
     }
   };
-     
-  return (
 
+  return (
     <GSafeAreaView>
       <View style={styles.container}>
         <View style={localStyle.digit_bg}>
@@ -86,7 +83,7 @@ export default function Numberverification({navigation,route}) {
             <GInput inputContainerStyle={localStyle.code_input} />
             <GInput inputContainerStyle={localStyle.code_input} />
           </View>
-          <View style={[styles.flexRow, styles.center,styles.mt50]}>
+          <View style={[styles.flexRow, styles.center, styles.mt50]}>
             <GText color={colors[theme].inputcolor} type={'m14'}>
               {strings.getcode}
             </GText>
@@ -105,7 +102,10 @@ export default function Numberverification({navigation,route}) {
           </View>
         </View>
       </View>
-      <Verificatonmodal modalVisible={modalVisible}  setModalVisible={setModalVisible}/>
+      <Verificatonmodal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </GSafeAreaView>
   );
 }
