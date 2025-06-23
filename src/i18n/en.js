@@ -37,4 +37,6 @@ export default{
     items:'Item’s',
     PackDetails:'Pack Details',
     Review:'Review',
+    NewItem:'New Item',
+
 }

@@ -47,7 +47,7 @@ export default function Homescreen({navigation}) {
   const onpressBundleProductdetils= (packId) =>{
     navigation.navigate(StackNav.BundleProductdetils,{packId});
 
-  }
+  }      
 
   return (
     <GSafeAreaView style={localStyle.home_bg}>
