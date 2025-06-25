@@ -1,39 +1,66 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+
 import GSafeAreaView from '@components/common/GSafeAreaView';
-import {useSelector} from 'react-redux';
-import Gproductcard from '@components/common/Gproductcard';
-import { styles } from '@style/index';
 import GHeader from '@components/common/GHeader';
+import Gproductcard from '@components/common/Gproductcard';
 import strings from '@i18n/strings';
+import { styles } from '@style/index';
+import { fetchPacks } from '@redux/slice/packSlice';
 import { StackNav } from '@navigation/NavigationKeys';
 
-export default function PopularPack({navigation}) {
+export default function PopularPack({ navigation }) {
+  const dispatch = useDispatch();
   const theme = useSelector(state => state.theme.theme);
   const localStyle = getLocalStyle(theme);
 
-   const packList = useSelector(state => state.packs.packList);
+  const packList = useSelector(state => state.packs.packList);
+  const { first, last, next, pages, items, loading } = useSelector(state => state.packs);
 
-    const onpressBundleProductdetils= () =>{
-       navigation.navigate(StackNav.BundleProductdetils);
-   
-     }
- 
+  const [refreshing, setRefreshing] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchPacks({ page: 1, per_page: 10 }));
+  }, [dispatch]);
+
+  const onEndReached = () => {
+    if (!loading && next) {
+      dispatch(fetchPacks({ page: next, per_page: 10 }));
+    }
+  };
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    dispatch(fetchPacks({ page: 1, per_page: 10 }));
+    setRefreshing(false);
+  };
+
+  const onPressItem = (packId) => {
+    navigation.navigate(StackNav.BundleProductdetils, { packId });
+  };
 
   return (
     <GSafeAreaView>
-      <GHeader title={strings.PopularPack}/>
-     <View style={styles.container}>
-       <FlatList
-        data={packList}
-        keyExtractor={item => item.id}
-        numColumns={2}
-        showsHorizontalScrollIndicator={false}
-        renderItem={({item}) => <Gproductcard item={item} onPressitem={onpressBundleProductdetils}/>}
-      />
-     </View>
+      <GHeader title={strings.PopularPack} />
+      <View style={styles.container}>
+        <FlatList
+          data={packList}
+          keyExtractor={(item, index) => index.toString()}
+          numColumns={2}
+          columnWrapperStyle={{ justifyContent: 'space-between' }}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 20 }}
+          renderItem={({ item }) => (
+            <Gproductcard item={item} onPressitem={() => onPressItem(item.id)} />
+          )}
+          onEndReached={onEndReached}
+          refreshing={refreshing}
+          onRefresh={onRefresh}
+        />
+      </View>
     </GSafeAreaView>
   );
 }
 
-const getLocalStyle = theme => StyleSheet.create({});
+const getLocalStyle = (theme) => StyleSheet.create({});

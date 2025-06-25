@@ -126,6 +126,9 @@ export default StyleSheet.create({
   mr8: {
     marginRight: moderateScale(8),
   },
+  mt8: {
+    marginRight: moderateScale(8),
+  },
   mt10: {
     marginTop: getHeight(10),
   },

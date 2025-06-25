@@ -16,6 +16,7 @@ import ProfileDetail from "@screen/Auth/ProfileDetail";
 import PopularPack from "@screen/Auth/PopularPack";
 import NewItem from "@screen/Auth/NewItem";
 import BundleProductdetils from "@screen/Auth/BundleProductdetils";
+import ProductDetails from "@screen/Auth/ProductDetails";
 
 export const StackRoute = {
     Onboarding,
@@ -30,6 +31,7 @@ export const StackRoute = {
     PopularPack,
     NewItem,
     BundleProductdetils,
+    ProductDetails,
 
 };
 export const TabRoute = {

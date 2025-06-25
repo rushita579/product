@@ -21,7 +21,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers } from 'redux';
 import ThemeReducer from '../slice/themeslice';
 import UserReducer from '../slice/userSlice';
-import ProductReducer, { packReducer, productReducer } from '../slice/productSlice';
+import  {  productReducer } from '../slice/productSlice';
+import { packReducer } from '@redux/slice/packSlice';
 // Combine reducers
 const rootReducer = combineReducers({
    products: productReducer,

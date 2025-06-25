@@ -26,6 +26,7 @@ export default function Stacknavigation() {
         <Stack.Screen name={StackNav.PopularPack} component={StackRoute.PopularPack}/>
         <Stack.Screen name={StackNav.NewItem} component={StackRoute.NewItem}/>
         <Stack.Screen name={StackNav.BundleProductdetils} component={StackRoute.BundleProductdetils}/>
+        <Stack.Screen name={StackNav.ProductDetails} component={StackRoute.ProductDetails}/>
         
       </Stack.Navigator>
   )

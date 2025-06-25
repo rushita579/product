@@ -7,8 +7,11 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import { RefreshControl } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
+
 
 // Local imports
 import strings from '@i18n/strings';
@@ -19,8 +22,8 @@ import Gproductcard from '@components/common/Gproductcard';
 import GSafeAreaView from '@components/common/GSafeAreaView';
 import {moderateScale} from '@common/constants';
 import {fetchProducts} from '@redux/slice/productSlice';
-import {fetchPacks} from '@redux/slice/productSlice'; // ensure fetchPacks is exported correctly
 import {StackNav} from '@navigation/NavigationKeys';
+import { fetchPacks } from '@redux/slice/packSlice';
 
 export default function Homescreen({navigation}) {
   const dispatch = useDispatch();
@@ -29,12 +32,23 @@ export default function Homescreen({navigation}) {
 
   const productList = useSelector(state => state.products.productlist);
   const packList = useSelector(state => state.packs.packList);
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = async () => {
+  setRefreshing(true);
+   dispatch(fetchProducts());
+   dispatch(fetchPacks());
+  setRefreshing(false);
+};
+
+  useFocusEffect(
+  useCallback(() => {
+    dispatch(fetchProducts({ page: 1, per_page: 5 }));
+    dispatch(fetchPacks({ page: 1, per_page: 5 }));
+  }, [dispatch])
+);
 
 
-  useEffect(() => {
-    dispatch(fetchProducts());
-    dispatch(fetchPacks());
-  }, [dispatch]);
 
   const onPresspacks = () => {
     navigation.navigate(StackNav.PopularPack);
@@ -48,10 +62,17 @@ export default function Homescreen({navigation}) {
     navigation.navigate(StackNav.BundleProductdetils,{packId});
 
   }      
+  const ProductDetails = (productId) =>{
+    navigation.navigate(StackNav.ProductDetails,{productId});
+
+  }      
+
 
   return (
     <GSafeAreaView style={localStyle.home_bg}>
-      <ScrollView>
+      <ScrollView refreshControl={
+    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+  }>
         <View style={styles.container}>
         {/* Header */}
         <View style={localStyle.Top_header}>
@@ -113,7 +134,7 @@ export default function Homescreen({navigation}) {
             keyExtractor={item => item.id}
             horizontal
             showsHorizontalScrollIndicator={false}
-            renderItem={({item}) => <Gproductcard item={item} />}
+            renderItem={({item}) => <Gproductcard item={item}  onPressitem={()=>ProductDetails(item.id)}/>}
           />
         </View>
       </View>

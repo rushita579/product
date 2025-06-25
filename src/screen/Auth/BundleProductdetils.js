@@ -1,5 +1,12 @@
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
-import React, {useEffect} from 'react';
+import {
+  Image,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import GSafeAreaView from '@components/common/GSafeAreaView';
 import {useDispatch, useSelector} from 'react-redux';
 import {colors, styles} from '@style/index';
@@ -8,9 +15,17 @@ import GHeader from '@components/common/GHeader';
 import {moderateScale} from '@common/constants';
 import strings from '@i18n/strings';
 import GButton from '@components/common/GButton';
-import {Addicon_green, Cart_by, Fillstar, Remove_icon} from '@assets/svg';
-import {getSinglePack} from '@redux/slice/productSlice';
+
+import {
+  Addicon_green,
+  Blankstar,
+  Cart_by,
+  Fillstar,
+  Remove_icon,
+} from '@assets/svg';
 import {useRoute} from '@react-navigation/native';
+import GLoader from '@components/common/GLoader';
+import {fetchPacks, getSinglePack} from '@redux/slice/packSlice';
 
 export default function BundleProductdetils() {
   const theme = useSelector(state => state.theme.theme);
@@ -21,8 +36,19 @@ export default function BundleProductdetils() {
   const packId = params?.packId;
 
   const singlePack = useSelector(state => state.packs.singlePack);
+  const { loading} = useSelector(
+    state => state.packs,
+  );
+  const [refreshing, setRefreshing] = useState(false);
 
+  const onRefresh = () => {
+    setRefreshing(true);
+    dispatch(fetchPacks({page: 1, per_page: 10}));
+    setRefreshing(false);
+  };
   useEffect(() => {
+    dispatch(fetchPacks({page: 1, per_page: 10}));
+
     if (packId) {
       dispatch(getSinglePack(packId));
     }
@@ -31,7 +57,10 @@ export default function BundleProductdetils() {
   return (
     <GSafeAreaView>
       <GHeader title={strings.BundelDetails} />
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
         <View style={localStyle.bundelproduct_bg}>
           <View style={styles.container}>
             <Image
@@ -142,6 +171,26 @@ export default function BundleProductdetils() {
             </View>
             <View style={localStyle.review_box}>
               <GText type={'b16'}>{strings.Review}</GText>
+              <View style={styles.flexRow}>
+                {[...Array(5)].map((v, i) => {
+                  const rating = Math.round(singlePack?.review_star ?? 0);
+                  return i < rating ? (
+                    <Fillstar
+                      key={i}
+                      width={moderateScale(14)}
+                      height={moderateScale(14)}
+                      style={styles.ml5}
+                    />
+                  ) : (
+                    <Blankstar
+                      key={i}
+                      width={moderateScale(14)}
+                      height={moderateScale(14)}
+                      style={styles.ml5}
+                    />
+                  );
+                })}
+              </View>
             </View>
             <View style={[styles.flexRow, styles.center]}>
               <GButton
@@ -162,11 +211,11 @@ export default function BundleProductdetils() {
                 color={colors[theme].white}
                 textType={'b16'}
               />
-              
             </View>
           </View>
         </View>
       </ScrollView>
+      {loading && <GLoader />}
     </GSafeAreaView>
   );
 }
@@ -216,5 +265,7 @@ const getLocalStyle = theme =>
       borderBottomWidth: moderateScale(1),
       ...styles.pb10,
       ...styles.mt20,
+      ...styles.flexRow,
+      ...styles.justifyBetween,
     },
   });

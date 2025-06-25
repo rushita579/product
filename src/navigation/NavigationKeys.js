@@ -16,6 +16,7 @@ export const StackNav = {
     PopularPack:'PopularPack',
     NewItem:'NewItem',
     BundleProductdetils:'BundleProductdetils',
+    ProductDetails:'ProductDetails'
 };
 
 export const TabNav = {

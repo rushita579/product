@@ -4,8 +4,9 @@
     "id": "prod001",
     "product_name": "Perry’s Ice CreamBanana",
     "weight": "800 Gm",
+    "selling_price": "$24",
     "original_price": "$13",
-    "description": "Fresh cauliflower from the garden.",
+    "description": "Duis aute veniam veniam qui aliquip irure duis sint magna occaecat dolore nisi culpa do. Est nisi incididunt aliquip  commodo aliqua tempor.",
     "review_star": 4.5,
     "review_text": "Very fresh and tasty.",
     "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
@@ -14,8 +15,9 @@
     "id": "prod002",
     "product_name": "Vanilla Ice Cream",
     "weight": "500 Gm",
+    "selling_price": "$12",
     "original_price": "$12",
-    "description": "Farm fresh potatoes full of nutrients.",
+     "description": "Duis aute veniam veniam qui aliquip irure duis sint magna occaecat dolore nisi culpa do. Est nisi incididunt aliquip  commodo aliqua tempor.",
     "review_star": 4.2,
     "review_text": "Good quality and value.",
     "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
@@ -24,8 +26,9 @@
     "id": "prod003",
    "product_name": "Meat",
     "weight": "1 kg",
+    "selling_price": "$20",
     "original_price": "$15",
-    "description": "Juicy red tomatoes from the farm.",
+    "description": "Duis aute veniam veniam qui aliquip irure duis sint magna occaecat dolore nisi culpa do. Est nisi incididunt aliquip  commodo aliqua tempor.",
     "review_star": 4.8,
     "review_text": "Perfect for salads and cooking.",
     "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
@@ -34,8 +37,9 @@
     "id": "prod004",
    "product_name": "Fresh Sea Tuna Fish",
     "weight": "1 kg",
+    "selling_price": "$10",
     "original_price": "$14",
-    "description": "Ripe and sweet papayas.",
+     "description": "Duis aute veniam veniam qui aliquip irure duis sint magna occaecat dolore nisi culpa do. Est nisi incididunt aliquip  commodo aliqua tempor.",
     "review_star": 4.6,
     "review_text": "Very sweet and fresh.",
     "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
@@ -44,8 +48,9 @@
     "id": "prod005",
    "product_name": "Classic pantz Drypers",
     "weight": "1 box",
+    "selling_price": "$25",
     "original_price": "$13",
-    "description": "High quality fresh meat.",
+    "description": "Duis aute veniam veniam qui aliquip irure duis sint magna occaecat dolore nisi culpa do. Est nisi incididunt aliquip  commodo aliqua tempor.",
     "review_star": 4.9,
     "review_text": "Premium and fresh cut.",
     "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
@@ -54,12 +59,168 @@
     "id": "prod006",
    "product_name": "Cabbage",
     "weight": "1 kg",
+    "selling_price": "$10",
     "original_price": "$13",
-    "description": "Fresh tuna fish from the sea.",
+    "description": "Duis aute veniam veniam qui aliquip irure duis sint magna occaecat dolore nisi culpa do. Est nisi incididunt aliquip  commodo aliqua tempor.",
     "review_star": 4.3,
     "review_text": "Perfectly fresh and clean.",
     "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod007",
+    "product_name": "Organic Carrots",
+    "weight": "1 kg",
+    "selling_price": "$8",
+    "original_price": "$10",
+    "description": "Fresh organic carrots, perfect for snacking and cooking.",
+    "review_star": 4.4,
+    "review_text": "Crunchy and sweet.",
+    "image": "https://images.unsplash.com/photo-1580910051073-99d4da3f47d2"
+  },
+  {
+    "id": "prod008",
+    "product_name": "Strawberries",
+    "weight": "500 Gm",
+    "selling_price": "$9",
+    "original_price": "$12",
+    "description": "Juicy strawberries packed with flavor.",
+    "review_star": 4.7,
+    "review_text": "So fresh and delicious.",
+    "image": "https://images.unsplash.com/photo-1560807707-8cc77767d783"
+  },
+  {
+    "id": "prod009",
+    "product_name": "Broccoli",
+    "weight": "1 kg",
+    "selling_price": "$7",
+    "original_price": "$9",
+    "description": "Crisp and green broccoli, ideal for steaming.",
+    "review_star": 4.2,
+    "review_text": "Very fresh.",
+    "image": "https://images.unsplash.com/photo-1584270354949-1fe6c0615fa3"
+  },
+  {
+    "id": "prod010",
+    "product_name": "Chicken Breast",
+    "weight": "1.5 kg",
+    "selling_price": "$18",
+    "original_price": "$22",
+    "description": "Boneless chicken breasts, great for healthy meals.",
+    "review_star": 4.6,
+    "review_text": "Very tender and tasty.",
+    "image": "https://images.unsplash.com/photo-1606788075761-1a1177c1b2a4"
+  },
+  {
+    "id": "prod011",
+    "product_name": "Whole Wheat Bread",
+    "weight": "400 Gm",
+    "selling_price": "$4",
+    "original_price": "$5",
+    "description": "Freshly baked whole wheat bread loaf.",
+    "review_star": 4.5,
+    "review_text": "Soft and fresh.",
+    "image": "https://images.unsplash.com/photo-1585238342028-3a5d4f0b23f4"
+  },
+  {
+    "id": "prod012",
+    "product_name": "Apples - Fuji",
+    "weight": "1 kg",
+    "selling_price": "$11",
+    "original_price": "$13",
+    "description": "Crisp and sweet Fuji apples.",
+    "review_star": 4.8,
+    "review_text": "Perfect for snacking.",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": "prod013",
+    "product_name": "Greek Yogurt",
+    "weight": "200 Gm",
+    "selling_price": "$6",
+    "original_price": "$8",
+    "description": "Thick and creamy Greek yogurt, high in protein.",
+    "review_star": 4.3,
+    "review_text": "Very smooth and tasty.",
+    "image": "https://images.unsplash.com/photo-1608759262327-efb4c1c69c11"
+  },
+  {
+    "id": "prod014",
+    "product_name": "Almond Milk",
+    "weight": "1 Ltr",
+    "selling_price": "$10",
+    "original_price": "$12",
+    "description": "Dairy-free almond milk, perfect for smoothies.",
+    "review_star": 4.4,
+    "review_text": "Tastes great with cereal.",
+    "image": "https://images.unsplash.com/photo-1621983871058-b8cbe1dc2430"
+  },
+  {
+    "id": "prod015",
+    "product_name": "Orange Juice",
+    "weight": "1 Ltr",
+    "selling_price": "$9",
+    "original_price": "$11",
+    "description": "Freshly squeezed orange juice with no added sugar.",
+    "review_star": 4.5,
+    "review_text": "Very refreshing.",
+    "image": "https://images.unsplash.com/photo-1559636800-7c96c643b4b1"
+  },
+  {
+    "id": "prod016",
+    "product_name": "Red Grapes",
+    "weight": "1 kg",
+    "selling_price": "$7",
+    "original_price": "$10",
+    "description": "Juicy and sweet seedless red grapes.",
+    "review_star": 4.7,
+    "review_text": "Tastes great and fresh.",
+    "image": "https://images.unsplash.com/photo-1615486363730-c1b6ce5eaf7c"
+  },
+  {
+    "id": "prod017",
+    "product_name": "Eggs (Brown, Free Range)",
+    "weight": "12 pcs",
+    "selling_price": "$6",
+    "original_price": "$8",
+    "description": "Farm-fresh brown eggs from free-range chickens.",
+    "review_star": 4.6,
+    "review_text": "Excellent quality.",
+    "image": "https://images.unsplash.com/photo-1589927986089-35812388d1f4"
+  },
+  {
+    "id": "prod018",
+    "product_name": "Peanut Butter",
+    "weight": "500 Gm",
+    "selling_price": "$8",
+    "original_price": "$9",
+    "description": "Smooth and natural peanut butter with no additives.",
+    "review_star": 4.4,
+    "review_text": "Great taste and texture.",
+    "image": "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f8e"
+  },
+  {
+    "id": "prod019",
+    "product_name": "Mozzarella Cheese",
+    "weight": "250 Gm",
+    "selling_price": "$11",
+    "original_price": "$13",
+    "description": "Perfect for pizzas and sandwiches.",
+    "review_star": 4.5,
+    "review_text": "Melts beautifully.",
+    "image": "https://images.unsplash.com/photo-1603052875306-9332d2ea2c6f"
+  },
+  {
+    "id": "prod020",
+    "product_name": "Lettuce",
+    "weight": "1 head",
+    "selling_price": "$4",
+    "original_price": "$5",
+    "description": "Crispy green lettuce for fresh salads.",
+    "review_star": 4.3,
+    "review_text": "Fresh and crunchy.",
+    "image": "https://images.unsplash.com/photo-1608136611514-0b7dc05c2ee7"
   }
+
 ],
 
  "categories": [
@@ -76,7 +237,7 @@
     "short_description": "Onion, Oil, Salt...",
     "Weight": "25 kg",
     "size": "Medum",
-    "review_star": 4.7,
+    "review_star": 3.7,
     "selling_price": "$35",
     "original_price": "$20",
     "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
@@ -125,7 +286,7 @@
     "short_description": "Onion, Oil, Salt...",
     "Weight": "12 kg",
     "size": "Small",
-    "review_star": 4.2,
+    "review_star": 3.2,
     "selling_price": "$24",
     "original_price":"$15",
     "image": "https://images.unsplash.com/photo-1582515073490-39981397c445",
@@ -329,7 +490,236 @@
     "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f"
   }
 ]
+  },
+    {
+    "id": "pack009",
+    "pack_name": "Medium Essentials Pack",
+    "short_description": "Soap, Oil, Salt...",
+    "Weight": "28 kg",
+    "size": "Medium",
+    "review_star": 4.2,
+    "selling_price": "$40",
+    "original_price": "$28",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+    "product_ids": [
+      {
+        "id": "prod007",
+        "name": "Shampoo",
+        "weight": "500 ml",
+        "image": "https://images.unsplash.com/photo-1593622407420-4c7f41603c1c"
+      }
+    ]
+  },
+  {
+    "id": "pack010",
+    "pack_name": "Daily Needs Pack",
+    "short_description": "Rice, Sugar, Tea...",
+    "Weight": "30 kg",
+    "size": "Large",
+    "review_star": 4.4,
+    "selling_price": "$52",
+    "original_price": "$40",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445",
+    "product_ids": [
+      {
+        "id": "prod008",
+        "name": "Rice Bag",
+        "weight": "10 Kg",
+        "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68"
+      }
+    ]
+  },
+  {
+    "id": "pack011",
+    "pack_name": "Health Combo Pack",
+    "short_description": "Multivitamins, Oats...",
+    "Weight": "15 kg",
+    "size": "Small",
+    "review_star": 4.7,
+    "selling_price": "$65",
+    "original_price": "$55",
+    "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f",
+    "product_ids": [
+      {
+        "id": "prod009",
+        "name": "Oats",
+        "weight": "1 Kg",
+        "image": "https://images.unsplash.com/photo-1618354691244-46b1e4f3127a"
+      }
+    ]
+  },
+  {
+    "id": "pack012",
+    "pack_name": "Summer Refresh Pack",
+    "short_description": "Juice, Fruits...",
+    "Weight": "18 kg",
+    "size": "Medium",
+    "review_star": 4.1,
+    "selling_price": "$45",
+    "original_price": "$35",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+    "product_ids": [
+      {
+        "id": "prod010",
+        "name": "Fruit Juice",
+        "weight": "1 Ltr",
+        "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+      }
+    ]
+  },
+  {
+    "id": "pack013",
+    "pack_name": "Mega Veggie Combo",
+    "short_description": "Tomato, Potato...",
+    "Weight": "32 kg",
+    "size": "Large",
+    "review_star": 4.3,
+    "selling_price": "$29",
+    "original_price": "$20",
+    "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68",
+    "product_ids": [
+      {
+        "id": "prod011",
+        "name": "Tomato",
+        "weight": "5 Kg",
+        "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f"
+      }
+    ]
+  },
+  {
+    "id": "pack014",
+    "pack_name": "Bakery Pack",
+    "short_description": "Bread, Cookies...",
+    "Weight": "14 kg",
+    "size": "Small",
+    "review_star": 4.0,
+    "selling_price": "$25",
+    "original_price": "$18",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+    "product_ids": [
+      {
+        "id": "prod012",
+        "name": "Cookies",
+        "weight": "500 Gm",
+        "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+      }
+    ]
+  },
+  {
+    "id": "pack015",
+    "pack_name": "Frozen Food Combo",
+    "short_description": "Frozen Paratha, Ice Cream...",
+    "Weight": "20 kg",
+    "size": "Medium",
+    "review_star": 4.6,
+    "selling_price": "$55",
+    "original_price": "$42",
+    "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68",
+    "product_ids": [
+      {
+        "id": "prod013",
+        "name": "Frozen Paratha",
+        "weight": "2 Kg",
+        "image": "https://images.unsplash.com/photo-1618354691244-46b1e4f3127a"
+      }
+    ]
+  },
+  {
+    "id": "pack016",
+    "pack_name": "Diapers Essentials",
+    "short_description": "Baby Diapers & Wipes",
+    "Weight": "12 kg",
+    "size": "Small",
+    "review_star": 4.8,
+    "selling_price": "$48",
+    "original_price": "$39",
+    "image": "https://images.unsplash.com/photo-1593622407420-4c7f41603c1c",
+    "product_ids": [
+      {
+        "id": "prod014",
+        "name": "Diaper Pack",
+        "weight": "1.5 Kg",
+        "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+      }
+    ]
+  },
+  {
+    "id": "pack017",
+    "pack_name": "Festival Pack",
+    "short_description": "Dry Fruits, Snacks",
+    "Weight": "22 kg",
+    "size": "Large",
+    "review_star": 5.0,
+    "selling_price": "$99",
+    "original_price": "$79",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445",
+    "product_ids": [
+      {
+        "id": "prod015",
+        "name": "Dry Fruit Mix",
+        "weight": "2 Kg",
+        "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68"
+      }
+    ]
+  },
+  {
+    "id": "pack018",
+    "pack_name": "Weekly Fresh Kit",
+    "short_description": "Vegetables + Milk + Eggs",
+    "Weight": "19 kg",
+    "size": "Medium",
+    "review_star": 4.3,
+    "selling_price": "$44",
+    "original_price": "$33",
+    "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f",
+    "product_ids": [
+      {
+        "id": "prod016",
+        "name": "Fresh Eggs",
+        "weight": "1.2 Kg",
+        "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+      }
+    ]
+  },
+  {
+    "id": "pack019",
+    "pack_name": "Kitchen Starter Pack",
+    "short_description": "Oil, Rice, Salt",
+    "Weight": "23 kg",
+    "size": "Medium",
+    "review_star": 4.4,
+    "selling_price": "$30",
+    "original_price": "$24",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce",
+    "product_ids": [
+      {
+        "id": "prod017",
+        "name": "Cooking Oil",
+        "weight": "5 Ltr",
+        "image": "https://images.unsplash.com/photo-1582515073490-39981397c445"
+      }
+    ]
+  },
+  {
+    "id": "pack020",
+    "pack_name": "Office Snacks Combo",
+    "short_description": "Chips, Juice, Cookies",
+    "Weight": "17 kg",
+    "size": "Small",
+    "review_star": 4.0,
+    "selling_price": "$27",
+    "original_price": "$21",
+    "image": "https://images.unsplash.com/photo-1589923188900-96c59a87db68",
+    "product_ids": [
+      {
+        "id": "prod018",
+        "name": "Potato Chips",
+        "weight": "600 Gm",
+        "image": "https://images.unsplash.com/photo-1600047502011-9c3e98e9cf8f"
+      }
+    ]
   }
+
 ],
 
 

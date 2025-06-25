@@ -38,5 +38,6 @@ export default{
     PackDetails:'Pack Details',
     Review:'Review',
     NewItem:'New Item',
+    ProductDetails:'Product Details',
 
 }

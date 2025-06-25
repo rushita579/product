@@ -33,8 +33,8 @@ import Add_icon from './add_icon.svg';
 import Addicon_green from './plus.svg';
 import Remove_icon from './minus.svg';
 import Cart_by from './cart.svg';
-import Blankstar from './blankstar.png';
-import Fillstar from './fillstar.png';
+import Blankstar from './blankstar.svg';
+import Fillstar from './fillstar.svg';
 
 
 export{
