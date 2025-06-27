@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import GSafeAreaView from '@components/common/GSafeAreaView';
 import GHeader from '@components/common/GHeader';
-import Gproductcard from '@components/common/Gproductcard';
+import Gproductcard from '@components/common/Gproductcart';
 import strings from '@i18n/strings';
 import { styles } from '@style/index';
 import { fetchPacks } from '@redux/slice/packSlice';

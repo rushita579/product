@@ -18,7 +18,7 @@ import strings from '@i18n/strings';
 import {Down_arrow, Location, Search, Three_dots} from '@assets/svg';
 import {colors, styles} from '@style/index';
 import GText from '@components/common/GText';
-import Gproductcard from '@components/common/Gproductcard';
+import Gproductcard from '@components/common/Gproductcart';
 import GSafeAreaView from '@components/common/GSafeAreaView';
 import {moderateScale} from '@common/constants';
 import {fetchProducts} from '@redux/slice/productSlice';

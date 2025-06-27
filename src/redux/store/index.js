@@ -1,59 +1,32 @@
-// // Src/redux/store.js
-// import { configureStore } from '@reduxjs/toolkit';
-// import productReducer from '../slice/productSlice'
-// import ThemeReducer from '../slice/themeslice'
-// import UserReducer from '../slice/userSlice'
-
-
-// export const store = configureStore({
-//   reducer: {
-//     products: productReducer,
-//     theme: ThemeReducer,
-//     user:UserReducer,
-//   },
-// });
-
-
-// src/redux/store.js
-import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
+//Librery import
+import {configureStore} from '@reduxjs/toolkit';
+import {persistStore, persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { combineReducers } from 'redux';
-import ThemeReducer from '../slice/themeslice';
+import {combineReducers} from 'redux';
+
+//Local import
 import UserReducer from '../slice/userSlice';
-import  {  productReducer } from '../slice/productSlice';
-import { packReducer } from '@redux/slice/packSlice';
-// Combine reducers
+import {productReducer} from '../slice/productSlice';
+import {packReducer} from '@redux/slice/packSlice';
+import ThemeReducer from '../slice/themeslice';
+
 const rootReducer = combineReducers({
-   products: productReducer,
+  products: productReducer,
   packs: packReducer,
   theme: ThemeReducer,
   user: UserReducer,
-
 });
-// Persist config
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['theme', 'user'], // choose which slices to persist
+  whitelist: ['theme', 'user'],
 };
-// Create persisted reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-// Configure store
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-      serializableCheck: false, // disable check for redux-persist
+      serializableCheck: false,
     }),
 });
 export const persistor = persistStore(store);
-
-
-
-
-
-
-
-
-

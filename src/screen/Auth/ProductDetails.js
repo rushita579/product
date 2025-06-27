@@ -1,3 +1,4 @@
+//Librery import
 import {
   Image,
   RefreshControl,
@@ -6,11 +7,13 @@ import {
   View,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
-import GSafeAreaView from '@components/common/GSafeAreaView';
 import {useDispatch, useSelector} from 'react-redux';
-import {getSingleProduct} from '@redux/slice/productSlice';
-import {colors} from '@style/Color';
 import {useRoute} from '@react-navigation/native';
+
+//Local import
+import GSafeAreaView from '@components/common/GSafeAreaView';
+import {addToCart, decreaseQuantity, getSingleProduct,} from '@redux/slice/productSlice';
+import {colors} from '@style/Color';
 import {styles} from '@style/index';
 import GText from '@components/common/GText';
 import {moderateScale} from '@common/constants';
@@ -24,8 +27,9 @@ import {
   Remove_icon,
 } from '@assets/svg';
 import GButton from '@components/common/GButton';
+import { StackNav } from '@navigation/NavigationKeys';
 
-export default function ProductDetails() {
+export default function ProductDetails({navigation}) {
   const theme = useSelector(state => state.theme.theme);
   const localStyle = getLocalStyle(theme);
   const dispatch = useDispatch();
@@ -36,8 +40,13 @@ export default function ProductDetails() {
   const singleproduct = useSelector(state => state.products.singleproduct);
   const [refreshing, setRefreshing] = useState(false);
 
+  const cartItems = useSelector(state => state.products.cartItems);
+const productInCart = cartItems.find(item => item.id === singleproduct?.id);
+const quantity = productInCart?.quantity || 0;
+
+
+
   const onRefresh = () => {
-    console.log('refreshing');
 
     setRefreshing(true);
     dispatch(getSingleProduct(productId));
@@ -49,6 +58,14 @@ export default function ProductDetails() {
       dispatch(getSingleProduct(productId));
     }
   }, [dispatch, productId]);
+
+   const onpressProductcart = () => {
+            navigation.navigate(StackNav.Productcart);
+        
+    }
+
+    
+  
   return (
     <GSafeAreaView>
       <GHeader title={strings.ProductDetails} />
@@ -98,9 +115,11 @@ export default function ProductDetails() {
                   title={<Remove_icon />}
                   textType={'b16'}
                   bordercolor={colors[theme].addborder}
+                   onPress={() => dispatch(decreaseQuantity(singleproduct.id))}
+                   
                 />
                 <GText type={'m20'} style={styles.mh20}>
-                  2
+                  {quantity}
                 </GText>
                 <GButton
                   containerStyle={localStyle.Add_item}
@@ -108,6 +127,7 @@ export default function ProductDetails() {
                   title={<Addicon_green />}
                   textType={'b16'}
                   bordercolor={colors[theme].addborder}
+                  onPress={() => dispatch(addToCart(singleproduct))}
                 />
               </View>
             </View>
@@ -157,6 +177,7 @@ export default function ProductDetails() {
               }
               textType={'b16'}
               bordercolor={colors[theme].addborder}
+              onPress={onpressProductcart}
             />
             <GButton
               containerStyle={localStyle.byenow_button}

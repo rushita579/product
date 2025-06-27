@@ -1,21 +1,25 @@
+//Librery import
 import {
   Image,
   RefreshControl,
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
-import GSafeAreaView from '@components/common/GSafeAreaView';
+import {useRoute} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
+
+//Local import
 import {colors, styles} from '@style/index';
 import GText from '@components/common/GText';
 import GHeader from '@components/common/GHeader';
 import {moderateScale} from '@common/constants';
 import strings from '@i18n/strings';
+import GSafeAreaView from '@components/common/GSafeAreaView';
 import GButton from '@components/common/GButton';
-
 import {
   Addicon_green,
   Blankstar,
@@ -23,11 +27,16 @@ import {
   Fillstar,
   Remove_icon,
 } from '@assets/svg';
-import {useRoute} from '@react-navigation/native';
 import GLoader from '@components/common/GLoader';
-import {fetchPacks, getSinglePack} from '@redux/slice/packSlice';
+import {
+  addPackToCart,
+  decreasePackQuantity,
+  fetchPacks,
+  getSinglePack,
+} from '@redux/slice/packSlice';
+import {StackNav} from '@navigation/NavigationKeys';
 
-export default function BundleProductdetils() {
+export default function BundleProductdetils({navigation}) {
   const theme = useSelector(state => state.theme.theme);
   const localStyle = getLocalStyle(theme);
 
@@ -36,10 +45,12 @@ export default function BundleProductdetils() {
   const packId = params?.packId;
 
   const singlePack = useSelector(state => state.packs.singlePack);
-  const { loading} = useSelector(
-    state => state.packs,
-  );
+  const {loading} = useSelector(state => state.packs);
   const [refreshing, setRefreshing] = useState(false);
+
+  const cartItems = useSelector(state => state.packs?.cartItems);
+  const quantity =
+    cartItems.find(item => item.id === singlePack?.id)?.quantity || 0;
 
   const onRefresh = () => {
     setRefreshing(true);
@@ -53,6 +64,10 @@ export default function BundleProductdetils() {
       dispatch(getSinglePack(packId));
     }
   }, [dispatch, packId]);
+
+  const onpressPackcart = () => {
+    navigation.navigate(StackNav.Packcart);
+  };
 
   return (
     <GSafeAreaView>
@@ -95,9 +110,10 @@ export default function BundleProductdetils() {
                   title={<Remove_icon />}
                   textType={'b16'}
                   bordercolor={colors[theme].addborder}
+                  onPress={() => dispatch(decreasePackQuantity(singlePack.id))}
                 />
                 <GText type={'m20'} style={styles.mh20}>
-                  2
+                  {quantity}
                 </GText>
                 <GButton
                   containerStyle={localStyle.Add_item}
@@ -105,6 +121,7 @@ export default function BundleProductdetils() {
                   title={<Addicon_green />}
                   textType={'b16'}
                   bordercolor={colors[theme].addborder}
+                  onPress={() => dispatch(addPackToCart(singlePack))}
                 />
               </View>
             </View>
@@ -204,6 +221,7 @@ export default function BundleProductdetils() {
                 }
                 textType={'b16'}
                 bordercolor={colors[theme].addborder}
+                onPress={onpressPackcart}
               />
               <GButton
                 containerStyle={localStyle.byenow_button}
